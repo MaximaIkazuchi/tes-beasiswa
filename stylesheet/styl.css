@@ -1,0 +1,165 @@
+/* navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  background-color: rgb(48, 48, 48);
+  border-bottom: 5px double blue;
+}
+
+nav > div > a {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+nav > div > a:hover {
+  color: white;
+  background-color: rgb(49, 49, 250);
+}
+
+.nav-active {
+  background-color: rgb(49, 49, 250);
+}
+/* navbar */
+
+/* content index */
+.welcome-text {
+  display: inline-flex;
+  justify-content: end;
+}
+
+.welcome-text > h1 {
+  width: 0;
+  padding-bottom: 8px;
+  padding-right: 0px;
+  letter-spacing: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 9s infinite;
+}
+
+.welcome-text > div {
+  width: 3px;
+  background-color: rgb(255, 73, 73);
+  margin-bottom: 7px;
+}
+
+@keyframes typing {
+  0% {width: 0%; padding-right: 0px;}
+  20%, 80% {width: 100%; padding-right: 10px;}
+  100% {width: 0%; padding-right: 0px;}
+}
+
+.menu-1 {
+  height: 20%;
+  padding: 15px;
+  border: 3px solid rgb(48, 48, 48);
+}
+
+.menu-1 > h3 {
+  border-bottom: 3px solid rgb(49, 49, 250);
+}
+
+.menu-1 > p > span {
+  color: rgb(70, 229, 70);
+}
+
+.menu-2 {
+  height: 20%;
+  padding: 15px;
+  border: 3px solid rgb(48, 48, 48);
+}
+
+.menu-2 > h3 {
+  border-bottom: 3px solid rgb(49, 49, 250);
+}
+
+.menu-2 > p > span {
+  color: red;
+}
+
+.menu-2 > a {
+  width: 100%;
+}
+/* content index */
+
+/* content data training */
+.area-table {
+  max-height: 75vh;
+}
+
+.data-header {
+  padding: 2px;
+  border-bottom: 3px solid rgb(49, 49, 250);
+}
+
+.btn-tambah-data {
+  font-size: 0.9em;
+  padding: 4px 10px 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(49, 49, 250);
+  border: 0;
+}
+
+#search_data {
+  border-radius: 10px 0 0 10px;
+}
+
+.btn-search {
+  color: white;
+  background-color: rgb(49, 49, 250);
+  border: 0;
+  padding-left: 10px;
+  padding-right: 11px;
+  border-radius: 0 12px 12px 0;
+  transition: 0.3s;
+}
+
+.btn-search:hover {
+  background-color: rgb(123, 123, 255);
+}
+
+.bg-thead {
+  background-color: rgb(49, 49, 250);
+}
+/* content data training */
+
+/* content cek beasiswa */
+.cek-form > h3 {
+  border-bottom: 3px solid rgb(49, 49, 250);
+}
+/* content cek beasiswa */
+
+/* page hasil */
+.hasil > h2 {
+  letter-spacing: 3px;
+}
+
+.thead-hasil {
+  border-bottom: 3px solid rgb(49, 49, 250);
+}
+
+.thead-hasil-no {
+  border-bottom: 3px solid red;
+}
+
+.resultText {
+  color: rgb(0, 255, 0);
+}
+
+.hasil > table {
+  width: max-content;
+  table-layout: fixed;
+}
+
+.hasil > table > tbody {
+  font-size: 0.9em;
+}
+/* page hasil */
