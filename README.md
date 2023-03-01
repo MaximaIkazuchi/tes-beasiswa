@@ -1,3 +1,3 @@
-# tes-beasiswa
-aplikasi web tes beasiswa menggunakan naive bayes classifier
-project bwt latian lks smk :v
+# Tes Beasiswa
+Aplikasi Web Test Beasiswa menggunakan Naive Bayes Classifier\
+Projek Buat Latian LKS tanggal 7 Maret 2023
