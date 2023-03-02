@@ -1,6 +1,6 @@
 <?php
 include "function/funcs.php";
-$data_train = query("SELECT * FROM penerima_beasiswa LIMIT 7");
+$data_train = pagination();
 
 if (isset($_POST['submit'])) {
   if (insertDataTrain($_POST) > 0) {
