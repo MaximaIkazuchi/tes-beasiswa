@@ -1,6 +1,14 @@
 <?php
 include "function/funcs.php";
-$data_train = pagination();
+
+// pagination
+$jumlahDataPerHalaman = 7;
+$jumlahData = count(query("SELECT * FROM penerima_beasiswa"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$offsetData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+$data_train = query("SELECT * FROM penerima_beasiswa LIMIT $offsetData, $jumlahDataPerHalaman");
 
 if (isset($_POST['submit'])) {
   if (insertDataTrain($_POST) > 0) {
@@ -84,8 +92,25 @@ include "header.php" ?>
           <!-- Table Components -->
 
           <!-- Footer Components -->
-          <div class="d-flex justify-content-center">
-            <button class="btn-tambah-data" type="button" data-bs-toggle="modal" data-bs-target="#modalTambahData">+ Tambah Data</button>
+          <div class="d-flex justify-content-between">
+            <button class="btn-tambah-data my-auto" type="button" data-bs-toggle="modal" data-bs-target="#modalTambahData">+ Tambah Data</button>
+            <!-- Pagination Control -->
+            <div class="d-flex">
+              <ul class="pagination">
+                <li class="page-item <?= ($halamanAktif <= 1) ? "disabled" : ""; ?>">
+                  <a class="page-link" href="?page=<?= $halamanAktif - 1 ?>"><i class="fa-solid fa-caret-left"></i></a>
+                </li>
+                <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                  <li class="page-item <?= ($i == $halamanAktif) ? "active" : ""; ?>">
+                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                  </li>
+                <?php endfor; ?>
+                <li class="page-item <?= ($halamanAktif >= $jumlahHalaman) ? "disabled" : ""; ?>">
+                  <a class="page-link" href="?page=<?= $halamanAktif + 1 ?>"><i class="fa-solid fa-caret-right"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!-- Pagination Control -->
           </div>
           <!-- Footer Components -->
         </div>
