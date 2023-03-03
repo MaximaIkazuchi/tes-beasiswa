@@ -30,18 +30,6 @@ function insertDataTrain($data)
   return mysqli_affected_rows($db);
 }
 
-// pagination data train
-function pagination()
-{
-  $jumlahDataPerHalaman = 7;
-  $jumlahData = count(query("SELECT * FROM penerima_beasiswa"));
-  $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
-  $halamanAktif = (isset($_GET['page'])) ? $_GET['page'] : 1;
-  $offsetData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-
-  return query("SELECT * FROM penerima_beasiswa LIMIT $offsetData, $jumlahDataPerHalaman");
-}
-
 // naive bayes
 function naivebayes($data_test)
 {
